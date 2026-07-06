@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Quiet Leaf — calm, private apps for iPhone</title>
+<meta name="description" content="Quiet Leaf LLC makes small, quiet iOS apps for meditation, breathing, journaling, and focus. No accounts. No tracking. No guilt.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=Karla:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #F6F8F2;
+    --ink: #22301F;
+    --ink-soft: #55614F;
+    --hairline: #DDE3D6;
+    --moss: #5B7350;
+    --tide: #4E7A8A;
+    --ember: #B0662D;
+    --tether: #55618F;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .fade { animation: none !important; opacity: 1 !important; }
+  }
+
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'Karla', system-ui, sans-serif;
+    font-size: 17px;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .wrap {
+    max-width: 620px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  .fade {
+    opacity: 0;
+    animation: fadein 0.9s ease 0.1s forwards;
+  }
+  @keyframes fadein { to { opacity: 1; } }
+
+  /* Header */
+  header { padding: 88px 0 64px; }
+
+  .mark {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 40px;
+  }
+  .mark svg { display: block; }
+  .mark span {
+    font-family: 'Newsreader', serif;
+    font-size: 22px;
+    font-weight: 500;
+    letter-spacing: 0.01em;
+  }
+
+  h1 {
+    font-family: 'Newsreader', serif;
+    font-weight: 400;
+    font-size: clamp(30px, 5.5vw, 42px);
+    line-height: 1.25;
+    max-width: 16em;
+  }
+  h1 em {
+    font-style: italic;
+    color: var(--ink-soft);
+  }
+
+  .sub {
+    margin-top: 20px;
+    color: var(--ink-soft);
+    max-width: 34em;
+  }
+
+  /* Sections */
+  section { padding: 48px 0; border-top: 1px solid var(--hairline); }
+
+  h2 {
+    font-family: 'Karla', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    margin-bottom: 32px;
+  }
+
+  /* App list with stem accents */
+  .app {
+    display: grid;
+    grid-template-columns: 3px 1fr;
+    gap: 20px;
+    padding: 20px 0;
+  }
+  .app + .app { border-top: 1px solid var(--hairline); }
+
+  .stem { border-radius: 2px; }
+  .app.moss .stem   { background: var(--moss); }
+  .app.tide .stem   { background: var(--tide); }
+  .app.tether .stem { background: var(--tether); }
+  .app.ember .stem  { background: var(--ember); }
+
+  .app h3 {
+    font-family: 'Newsreader', serif;
+    font-size: 23px;
+    font-weight: 500;
+    line-height: 1.3;
+  }
+  .app h3 .tag {
+    font-family: 'Karla', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    margin-left: 10px;
+    vertical-align: 2px;
+  }
+  .app p {
+    margin-top: 6px;
+    color: var(--ink-soft);
+    max-width: 32em;
+  }
+  .app a.applink {
+    display: inline-block;
+    margin-top: 10px;
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--ink);
+    text-decoration: none;
+    border-bottom: 1px solid var(--ink);
+    padding-bottom: 1px;
+  }
+  .app a.applink:hover { color: var(--ink-soft); border-color: var(--ink-soft); }
+  .app a.applink:focus-visible,
+  a:focus-visible {
+    outline: 2px solid var(--tide);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  /* Principles */
+  .principles p { max-width: 36em; }
+  .principles p + p { margin-top: 16px; }
+
+  /* Support */
+  .support a { color: var(--ink); }
+  .support p + p { margin-top: 12px; }
+
+  /* Footer */
+  footer {
+    border-top: 1px solid var(--hairline);
+    padding: 40px 0 72px;
+    font-size: 14px;
+    color: var(--ink-soft);
+  }
+  footer p + p { margin-top: 6px; }
+</style>
+</head>
+<body>
+
+<div class="wrap fade">
+
+  <header>
+    <div class="mark" aria-hidden="true">
+      <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M13 23 C13 14, 14 8, 21 3 C21 12, 19 19, 13 23 Z" fill="#5B7350"/>
+        <path d="M13 23 C13 17, 11.5 13, 6 10 C6.5 16, 9 20.5, 13 23 Z" fill="#5B7350" opacity="0.55"/>
+      </svg>
+      <span>Quiet Leaf</span>
+    </div>
+    <h1>Small, quiet apps for iPhone. <em>Nothing to sign up for. Nothing watching you.</em></h1>
+    <p class="sub">Quiet Leaf is an independent studio in Denver, Colorado. Every app works offline, keeps your data on your device, and leaves you alone when you close it.</p>
+  </header>
+
+  <section id="apps">
+    <h2>Apps</h2>
+
+    <div class="app moss">
+      <div class="stem" aria-hidden="true"></div>
+      <div>
+        <h3>Moss</h3>
+        <p>A meditation timer with nothing extra. Set a time, sit, and a soft bell brings you back. Streaks and stats are optional — and off by default.</p>
+        <a class="applink" href="APP_STORE_LINK_MOSS">View on the App Store</a>
+      </div>
+    </div>
+
+    <div class="app tide">
+      <div class="stem" aria-hidden="true"></div>
+      <div>
+        <h3>Tide</h3>
+        <p>Guided breathing, three ways: box breathing, 4-7-8, and a slow calming pattern. A quiet visual rhythm to breathe along with.</p>
+        <a class="applink" href="APP_STORE_LINK_TIDE">View on the App Store</a>
+      </div>
+    </div>
+
+    <div class="app tether">
+      <div class="stem" aria-hidden="true"></div>
+      <div>
+        <h3>Tether <span class="tag">Coming soon</span></h3>
+        <p>A focus and day planner built for minds that lose track of time. Your day on a single timeline, with alerts that don't give up after one ring. Syncs privately through iCloud — no account, no server of ours.</p>
+      </div>
+    </div>
+
+    <div class="app ember">
+      <div class="stem" aria-hidden="true"></div>
+      <div>
+        <h3>Ember <span class="tag">In progress</span></h3>
+        <p>A journal for the embers of the day — whatever is still glowing or lingering when you finally have a moment to write it down.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="principles" id="principles">
+    <h2>How we build</h2>
+    <p>No accounts. No tracking. Every Quiet Leaf app reports "Data Not Collected" on its App Store privacy label, because there is no server collecting anything.</p>
+    <p>No guilt. No streak-shaming, no red badges, no notifications designed to pull you back in. These are tools you pick up when you need them and put down when you don't.</p>
+    <p>Offline first. Your data lives on your device. Where sync exists, it runs through your own private iCloud — we never see it.</p>
+  </section>
+
+  <section class="support" id="support">
+    <h2>Support &amp; contact</h2>
+    <p>Questions, bug reports, or ideas — email <a href="mailto:SUPPORT_EMAIL">SUPPORT_EMAIL</a> and a human (the only one here) will reply.</p>
+    <p>Per-app support: <a href="MOSS_SUPPORT_URL">Moss</a> · <a href="TIDE_SUPPORT_URL">Tide</a></p>
+    <p>Privacy policies: <a href="MOSS_PRIVACY_URL">Moss</a> · <a href="TIDE_PRIVACY_URL">Tide</a></p>
+  </section>
+
+  <footer>
+    <p>Quiet Leaf LLC · Denver, Colorado</p>
+    <p>&copy; 2026 Quiet Leaf LLC. All rights reserved.</p>
+  </footer>
+
+</div>
+
+</body>
+</html>
