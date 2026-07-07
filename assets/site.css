@@ -1,0 +1,200 @@
+:root {
+  --paper: #F6F8F2;
+  --ink: #22301F;
+  --ink-soft: #55614F;
+  --hairline: #DDE3D6;
+  --accent: #22301F;
+  --focus-ring: #4E7A8A;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .fade { animation: none !important; opacity: 1 !important; }
+}
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: 'Karla', system-ui, sans-serif;
+  font-size: 17px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+.wrap {
+  max-width: 620px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.fade {
+  opacity: 0;
+  animation: fadein 0.9s ease 0.1s forwards;
+}
+@keyframes fadein { to { opacity: 1; } }
+
+/* Header */
+header { padding: 88px 0 64px; }
+
+.mark {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 40px;
+}
+.mark svg { display: block; }
+.mark span {
+  font-family: 'Newsreader', serif;
+  font-size: 22px;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+}
+
+/* App icon used on app subpages in place of the Quiet Leaf logo */
+.icon-mark {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  flex-shrink: 0;
+  display: block;
+  object-fit: cover;
+}
+
+h1 {
+  font-family: 'Newsreader', serif;
+  font-weight: 400;
+  font-size: clamp(30px, 5.5vw, 42px);
+  line-height: 1.25;
+  max-width: 16em;
+}
+h1 em {
+  font-style: italic;
+  color: var(--ink-soft);
+}
+
+.sub {
+  margin-top: 20px;
+  color: var(--ink-soft);
+  max-width: 34em;
+}
+
+/* Sections */
+section { padding: 48px 0; border-top: 1px solid var(--hairline); }
+
+h2 {
+  font-family: 'Karla', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  margin-bottom: 32px;
+}
+
+/* Status badge (e.g. "Coming soon", "In progress") */
+.tag {
+  font-family: 'Karla', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  margin-left: 10px;
+  vertical-align: 2px;
+}
+
+/* App list with stem accents (homepage) */
+.app {
+  display: grid;
+  grid-template-columns: 3px 1fr;
+  gap: 20px;
+  padding: 20px 0;
+}
+.app + .app { border-top: 1px solid var(--hairline); }
+
+.stem { border-radius: 2px; }
+.app.moss .stem   { background: var(--moss); }
+.app.tide .stem   { background: var(--tide); }
+.app.tether .stem { background: var(--tether); }
+.app.ember .stem  { background: var(--ember); }
+
+.app h3 {
+  font-family: 'Newsreader', serif;
+  font-size: 23px;
+  font-weight: 500;
+  line-height: 1.3;
+}
+.app p {
+  margin-top: 6px;
+  color: var(--ink-soft);
+  max-width: 32em;
+}
+.applink {
+  display: inline-block;
+  margin-top: 10px;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--ink);
+  text-decoration: none;
+  border-bottom: 1px solid var(--ink);
+  padding-bottom: 1px;
+}
+.applink:hover { color: var(--ink-soft); border-color: var(--ink-soft); }
+.applink:focus-visible,
+a:focus-visible {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* Principles */
+.principles p { max-width: 36em; }
+.principles p + p { margin-top: 16px; }
+
+/* Feature list (app subpages) */
+.features { margin-top: 8px; }
+.features li {
+  list-style: none;
+  padding: 14px 0;
+  color: var(--ink-soft);
+}
+.features li + li { border-top: 1px solid var(--hairline); }
+
+/* Pattern grid (Tide's breathing patterns) */
+.patterns {
+  display: grid;
+  gap: 1px;
+  background: var(--hairline);
+  border: 1px solid var(--hairline);
+  border-radius: 6px;
+  overflow: hidden;
+  margin-top: 8px;
+}
+.pattern { background: var(--paper); padding: 18px 20px; }
+.pattern-name {
+  font-family: 'Karla', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink);
+  margin-bottom: 4px;
+}
+.pattern-rhythm { font-size: 14px; color: var(--accent); margin-bottom: 4px; }
+.pattern-desc { font-size: 14px; color: var(--ink-soft); }
+
+/* Support */
+.support a { color: var(--ink); }
+.support p + p { margin-top: 12px; }
+
+/* Footer */
+footer {
+  border-top: 1px solid var(--hairline);
+  padding: 40px 0 72px;
+  font-size: 14px;
+  color: var(--ink-soft);
+}
+footer p + p { margin-top: 6px; }
