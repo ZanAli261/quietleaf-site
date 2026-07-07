@@ -45,7 +45,7 @@ header { padding: 88px 0 64px; }
   gap: 10px;
   margin-bottom: 40px;
 }
-.mark svg { display: block; }
+.mark svg, .mark img { display: block; }
 .mark span {
   font-family: 'Newsreader', serif;
   font-size: 22px;
